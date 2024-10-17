@@ -16804,10 +16804,15 @@
                         }
                         let htmlel = el.ref.current;
                         if (htmlel != null) {
-                            if (/^>\S/mi.test(t)) {
+                            if (/^>[^>]/mi.test(t)) {
                                 htmlel.classList.add("greentext");
                             } else {
                                 htmlel.classList.remove("greentext");
+                            }
+                            if (/^>>/mi.test(t)) {
+                                htmlel.classList.add("linktext");
+                            } else {
+                                htmlel.classList.remove("linktext");
                             }
                         }
                         return el;
@@ -19335,4 +19340,4 @@
         }()
 }();
 //# sourceMappingURL=main.1be135fe.js.map
-// 18916
+// 16805
